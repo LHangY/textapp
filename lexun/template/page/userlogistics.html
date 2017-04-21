@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"/>
+		<title>查看物流</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">查看物流</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-row bgf ilogist-top-box">
+				<div class="mui-col-xs-3 mui-text-center ">
+					<span class="logist-img">
+						<img src="../../img/logistics-img.png" alt="" />
+					</span>
+				</div>
+				<div class="mui-col-xs-9 logist-top-txt">
+					<p>物流状态：<span>已签收</span></p>
+					<p>承运来源：中通快递</p>
+					<p>订单编号：379125468990</p>
+					<p>官方电话：9531</p>
+				</div>
+			</div>
+			<ul class="logist-content bgf">
+				<li class="mui-row">
+					<div class="logist-tunav"><span></span></div>
+					<div class=" logist-c-txt">
+						<p>进行装车扫描，即将发往：上海分拨中心</p>
+						<span>2016-04-14  20:11</span>
+					</div>
+				</li>
+				<li class="mui-row">
+					<div class="logist-tunav"><span></span></div>
+					<div class=" logist-c-txt">
+						<p>进行中转集包扫苗，将发往：湖南分拨中心</p>
+						<span>2016-04-14  20:11</span>
+					</div>
+				</li>
+				<li class="mui-row">
+					<div class="logist-tunav"><span></span></div>
+					<div class="logist-c-txt">
+						<p>进行装车扫描，即将发往：上海分拨中心</p>
+						<span>2016-04-14  20:11</span>
+					</div>
+				</li>
+				<li class="mui-row">
+					<div class="logist-tunav"><span></span></div>
+					<div class="logist-c-txt">
+						<p>进行装车扫描，即将发往：上海分拨中心</p>
+						<p>123452652484</p>
+						<span>2016-04-14  20:11</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script>
+			var lctxt = document.getElementsByClassName('logist-c-txt');
+			var ltunav = document.getElementsByClassName('logist-tunav');
+			var h=0;
+			for(var i=0;i<lctxt.length;i++){
+				h = lctxt[i].offsetHeight;
+				ltunav[i].style.minHeight = h +"px";
+			}
+		</script>
+	</body>
+</html>

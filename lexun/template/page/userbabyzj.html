@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"/>
+		<title>我的宝贝资料</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">编辑宝贝资料</h1>
+			<a href="" class="mui-action-menu mui-pull-right baoxun">保存</a>
+		</header>
+		<div class="mui-content">
+			<div class="bgf baby-zl-top">
+				<h3>我的头像</h3>
+				<div class="baby-topimg">
+					<img src="../../img/babyimg.png" alt="" class="babyimg" />
+					<input type="file" name="" id="" value="123"  class="file2"/>
+					<span class="filebg"></span>
+				</div>
+				<div class="babysex mui-row">
+					<span class="mui-col-xs-4 sex1 active">男</span>
+					<span class="mui-col-xs-4 sex1">女</span>
+					<span class="mui-col-xs-4 sex1">保密</span>
+				</div>
+			</div>
+			<ul class="list-box czstyle">
+				<li class="list-item">姓名 <input type="text" name="" id="" value="" placeholder="请填写宝贝姓名"/></li>
+				<li class="list-item xuanzek" data-options='{"type":"date","beginYear":1970,"endYear":2018}'>年龄 <input type="text" name="" id="age1" value="" placeholder="请选择年龄" /><i class="mui-icon mui-icon-arrowright fr"></i></li>
+				<li class="list-item xuanzek">年级 <input type="text" name="" id="nianj" value="" placeholder="请选择年级"/><i class="mui-icon mui-icon-arrowright fr"></i></li>
+				<li class="list-item">审核状态<p>正在审核</p></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/mui.picker.min.js"></script>
+		<script>
+			(function($){
+				$.ready(function(){
+					var xzk = $('.xuanzek');
+					var age1 = $('#age1')[0];
+					var nianj = $('#nianj')[0];
+					var sex = $('.sex1');
+					var mydata = new Date();
+					sex.each(function(i,se){
+						se.addEventListener('tap',function(){
+							for(var j=0;j<sex.length;j++){
+								sex[j].className = 'mui-col-xs-4 sex1';
+							};
+							this.classList.add('active');
+						});
+					});
+					xzk.each(function(i,lis){
+						lis.addEventListener('tap',function(){
+							if(i==0){
+								var optionsJson = this.getAttribute('data-options') || '{}';
+								var options = JSON.parse(optionsJson);
+								var picker = new $.DtPicker(options);
+								var year = mydata.getFullYear();
+								picker.show(function(rs) {
+									/*
+									 * rs.value 拼合后的 value
+									 * rs.text 拼合后的 text
+									 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+									 * rs.m 月，用法同年
+									 * rs.d 日，用法同年
+									 * rs.h 时，用法同年
+									 * rs.i 分（minutes 的第二个字母），用法同年
+									 */
+									age1.value=year-rs.y.value+"岁";
+									picker.dispose();
+								});
+							};
+							if(i==1){
+								var picker = new mui.PopPicker();
+							 	picker.setData([
+							 		{value:'1',text:'一年级'},
+							 		{value:"2",text:"二年级"},
+							 		{value:"3",text:"三年级"},
+							 		{value:"4",text:"四年级"},
+							 		{value:"5",text:"五年级"},
+							 		{value:"6",text:"六年级"}
+							 		]);
+							 	picker.show(function (selectItems) {
+							 		nianj.value = selectItems[0].text;
+									picker.dispose();
+							 	});
+							}
+						});
+					})
+				});
+			})(mui);
+		</script>
+	</body>
+</html>

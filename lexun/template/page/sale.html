@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"/>
+		<title>全部分类</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body ondragstart="return false">
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">全部分类</h1>
+		</header>
+		<div class="mui-content mui-row">
+			<div class="mui-col-xs-3">
+				<div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical " id="sale-lefta">
+					<a class="mui-control-item" data-index="0" href="#content1">中小学</a>
+					<a class="mui-control-item mui-active" data-index="1" href="#content2">兴趣生活</a>
+					<a class="mui-control-item" data-index="2" href="#content3">语言/留学</a>
+					<a class="mui-control-item" data-index="1" href="#content4">考试认证</a>
+					<a class="mui-control-item" data-index="1" href="#content5">IT/互联网</a>
+					<a class="mui-control-item" data-index="1" href="#content6">设计创作</a>
+					<a class="mui-control-item" data-index="1" href="#content7">职场/金融</a>
+				</div>
+			</div>
+			<div id="segmentedControlContents" class="mui-col-xs-9">
+				<div id="content1" class="mui-control-content ">
+					选项1111
+				</div>
+				<div id="content2" class="mui-control-content mui-active">
+					<img src="../../img/3-sale-logo.png"/>
+					<h3>摄影</h3>
+					<div class="fenleilist">
+						<a href="">全部</a>
+						<a href="">摄影基础</a>
+						<a href="">人像基础</a>
+						<a href="">风光摄影</a>
+						<a href="">电商摄影</a>
+						<a href="">手机摄影</a>
+						<a href="">摄影后期</a>
+					</div>
+					<h3>音乐</h3>
+					<div class="fenleilist">
+						<a href="">全部</a>
+						<a href="">乐器</a>
+						<a href="">唱歌</a>
+						<a href="">编曲</a>
+						<a href="">音乐基础</a>
+					</div>
+					<h3>健康</h3>
+					<div class="fenleilist">
+						<a href="">全部</a>
+						<a href="">健身</a>
+						<a href="">体育</a>
+						<a href="">舞蹈</a>
+						<a href="">瑜伽</a>
+						<a href="">武术</a>
+						<a href="">养生</a>
+						<a href="">性健康</a>
+						<a href="">母婴</a>
+					</div>
+					<h3>生活</h3>
+					<div class="fenleilist">
+						<a href="">全部</a>
+						<a href="">美食烹饪</a>
+						<a href="">时尚美妆</a>
+					</div>
+				</div>
+				<div id="content3" class="mui-control-content ">
+					选项三3333
+				</div>
+				<div id="content4" class="mui-control-content ">
+					选项5444
+				</div>
+				<div id="content5" class="mui-control-content">
+					选项5555
+				</div>
+				<div id="content6" class="mui-control-content">
+					选项66666
+				</div>
+				<div id="content7" class="mui-control-content">
+					选项77777
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			var controls = document.getElementById("segmentedControls");
+			var contents = document.getElementById("segmentedControlContents");
+			//controls.querySelector('.mui-control-item').classList.add('mui-active');
+			//contents.querySelector('.mui-control-content').classList.add('mui-active');
+		</script>
+	</body>
+</html>

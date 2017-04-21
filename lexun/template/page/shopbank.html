@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" />
+		<title>选择银行</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">选择银行</h1>
+		</header>
+		<div class="mui-content">
+			<h3 class="bank-tishi">交易前请绑定持卡人本人的银行卡</h3>
+			<form action="" method="post">
+				<ul class="bank-xinxi">
+					<li><span>持卡人</span><input type="text" placeholder="请输入持卡人姓名"/> </li>
+					<li><span>身份证号</span> <input type="text" placeholder="请输入身份证号码"/></li>
+					<li class="bank-xuanze"><span>银行卡</span><input type="text" placeholder="请选择银行" value="" id="bankcard"/><i class="mui-icon mui-icon-arrowright fr"></i></li>
+					<li><span>卡号</span><input type="text" placeholder="请输入卡号" /></li>
+					<li><span>预留手机号</span><input type="tel" placeholder="请输入手机号"/></li>
+				</ul>
+				<input type="submit" value="确认支付" id="banktj" class="banktj"/>
+			</form>
+		</div>
+		<div class="modal-box">
+			<div class="banktype">
+				<h3><span>选择储蓄卡所属银行</span><button class="btn bankbi">取消</button></h3>
+				<ul>
+					<li class="banklei"><i class="iconfont">&#xe697;</i><span class="banktext">中国工商银行</span></li>
+					<li class="banklei"><i class="iconfont">&#xe627;</i><span class="banktext">中国农业银行</span></li>
+					<li class="banklei"><i class="iconfont">&#xe624;</i><span class="banktext">中国银行</span></li>
+					<li class="banklei"><i class="iconfont">&#xe732;</i><span class="banktext">中国建设银行</span></li>
+					<li class="banklei"><i class="iconfont">&#xe72e;</i><span class="banktext">招商银行</span></li>
+					<li class="banklei"><i class="iconfont">&#xe684;</i><span class="banktext">兴业银行</span></li>
+					<li class="banklei"><i class="iconfont">&#xe698;</i><span class="banktext">中国光大银行</span></li>
+				</ul>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script>
+			(function($){
+				$.ready(function(){
+					var bankxz = $('.bank-xuanze')[0];
+					var bankL = $('.banklei');
+					var bankcard = document.getElementById('bankcard');
+					var modalbox = document.getElementsByClassName('modal-box')[0];
+					var bankbi = document.getElementsByClassName('bankbi')[0];
+					var txt = document.getElementsByClassName('banktext');
+					bankxz.addEventListener('tap',function(){
+						modalbox.style.display = 'block';
+					});
+					bankbi.addEventListener('tap',function(){
+						modalbox.style.display = 'none';
+					});
+					bankL.each(function(i,banklei){
+						banklei.addEventListener('tap',function(){
+							bankcard.value = txt[i].innerHTML;
+							modalbox.style.display = 'none';
+						})
+					})
+				})
+			})(mui);
+		</script>
+	</body>
+</html>

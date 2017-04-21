@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"/>
+		<title>shoplist</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left cof">返回</a>
+			<div class="fl shop-titleinput">
+				<span class="iconfont fl">&#xe604;</span><input type="text" name="" id="" value="" placeholder="搜索书籍"/>
+			</div>
+		</header>
+		<div class="mui-content  pd24">
+			<div id="segmentedControl" class="mui-segmented-control item-nav shop-title">
+				<a class="mui-control-item" href="#">默认</a>
+				<a class="mui-control-item mui-active" href="#">价格<span class="jiage-tiaozheng"><i class="iconfont active">&#xe65a;</i><i class="iconfont">&#xe65a;</i></span></a>
+				<a class="mui-control-item" href="#">销量</a>
+			</div>
+			<div class="shop-content bgimg cle pd-bottom13">
+					<div class="shop-item bgf fl">
+						<a href=""><img src="../../img/shop-phopo.png"/></a>
+						<h4>第一套百科全书正版6册</h4>
+						<span>￥39.70</span><span>￥39.70</span><button class="btn1"><span class="iconfont colorffab">&#xe6d5;</span></button>
+					</div>
+					<div class="shop-item bgf fl">
+						<a href=""><img src="../../img/shop-phopo.png"/></a>
+						<h4>第一套百科全书正版6册</h4>
+						<span>￥39.70</span><span>￥39.70</span><button class="btn1"><span class="iconfont colorffab">&#xe6d5;</span></button>
+					</div>
+					<div class="shop-item bgf fl">
+						<a href=""><img src="../../img/shop-phopo.png"/></a>
+						<h4>第一套百科全书正版6册</h4>
+						<span>￥39.70</span><span>￥39.70</span><button class="btn1"><span class="iconfont colorffab">&#xe6d5;</span></button>
+					</div>
+					<div class="shop-item bgf fl">
+						<a href=""><img src="../../img/shop-phopo.png"/></a>
+						<h4>第一套百科全书正版6册</h4>
+						<span>￥39.70</span><span>￥39.70</span><button class="btn1"><span class="iconfont colorffab">&#xe6d5;</span></button>
+					</div>
+					<div class="shop-item bgf fl">
+						<a href=""><img src="../../img/shop-phopo.png"/></a>
+						<h4>第一套百科全书正版6册</h4>
+						<span>￥39.70</span><span>￥39.70</span><button class="btn1"><span class="iconfont colorffab">&#xe6d5;</span></button>
+					</div>
+					<div class="shop-item bgf fl">
+						<a href=""><img src="../../img/shop-phopo.png"/></a>
+						<h4>第一套百科全书正版6册</h4>
+						<span>￥39.70</span><span>￥39.70</span><button class="btn1"><span class="iconfont colorffab">&#xe6d5;</span></button>
+					</div>
+				</div>
+		</div>
+		<div class="shoplist-footer">
+			已添加<span>10</span>件商品<a href="">去结算</a>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			(function($){
+				$.ready(function(){
+					var btn=$('.btn1');
+					
+					btn.each(function(i,btn1){
+						var fool=true;
+						btn1.addEventListener('tap',function(){
+							if(fool==true){
+									this.getElementsByTagName('span')[0].innerHTML='&#xe6d7;';
+									this.getElementsByTagName('span')[0].className='iconfont colorccc';
+									fool=false;
+								}else{
+									this.getElementsByTagName('span')[0].innerHTML='&#xe6d5;';
+									this.getElementsByTagName('span')[0].className='iconfont colorffab';
+									fool=true;
+							}
+						})
+					});
+					var Ch=document.documentElement.clientHeight;
+					var shopC=document.getElementsByClassName('shop-content')[0];
+					var hearH=document.getElementsByTagName('header')[0].offsetHeight;
+					shopC.style.minHeight=Ch-hearH-hearH+"px";
+				});
+			})(mui);
+			
+		</script>
+	</body>
+</html>

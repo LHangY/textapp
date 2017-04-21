@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"/>
+		<title>我的钱包</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-fa19">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<!--<h1 class="mui-title">jmiamia</h1>-->
+			<a href="" class="mui-action-menu mui-pull-right mingxi">明细</a>
+		</header>
+		<div class="mui-content bgf2">
+			<div class="money-top bgcolor-fa19">
+				<h3>我的小金库</h3>
+				<p>充值得学币 · 方便随时支付</p>
+			</div>
+			<a href="" class="bgf7 money-nav">如何获得学币？去看攻略 <i class="mui-icon mui-icon-arrowright fr"></i></a>
+			<div class="mui-row pdt110 money-con">
+				<div class="mui-col-xs-6 mui-text-center">
+					<img src="../../img/jqzhu.png"/>
+					<p>我的余额（元）</p>
+					<span>458.00</span>
+				</div>
+				<div class="mui-col-xs-6 mui-text-center">
+					<img src="../../img/jinbi.png" alt="" />
+					<p>我的学币（个）</p>
+					<span>1402</span>
+				</div>
+			</div>
+			<a href="" class="chongz">去充值</a>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script>
+			(function($){
+				$.ready(function(){
+					var Ch=document.documentElement.clientHeight;
+					var conbox = $('.mui-content')[0];
+					conbox.style.minHeight = Ch+'px';
+				});
+			})(mui);
+		</script>
+	</body>
+</html>

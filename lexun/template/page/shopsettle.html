@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" />
+		<title>结算</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">结算</h1>
+		</header>
+		<div class="mui-content pdb16">
+			<div class="jiesuan-dizhi">
+				<div class="jiesuan-top-title">
+					<i class="iconfont">&#xe61d;</i>请填写收货地址<button class="fr" id="bianji">编辑</button>
+				</div>
+				<div id="tx-success" class="tx-tianxie">
+					<p class="dizhi">上海市辖区黄浦区南京东路街道科技京城西楼</p>
+					<p class="name">张晓洁</p>
+					<p class="tel">15333225425</p>
+				</div>
+				<div id="tx-tianxie" class="tx-tianxie">
+					<form action="" method="">
+						<input type="text" placeholder="真实姓名" />
+						<input type="tel" name="" id="" value="" placeholder="手机号" />
+						<a href="">选择地区 <i class="mui-icon mui-icon-arrowright fr"></i> </a>
+						<input type="text" name="" id="" value="" placeholder="收货地址" />
+						<div class="dizhi-tijiao">
+							<input type="submit" id="jztijiao" value="保存地址" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="jieshuan-shop">
+				<h3><i class="iconfont">&#xe614;</i>乐训联盟商城</h3>
+				<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+					<li class="mui-table-view-cell">
+						<a href="">
+							<div class="mui-table">
+								<div class="mui-table-cell mui-col-xs-2 shop-logo">
+									<img src="../../img/shop-photo1.png" />
+								</div>
+								<div class="mui-table-cell mui-col-xs-10 shop-xinxi">
+									<h4 class="mui-ellipsis jiezhang-name">澳洲进口Devondale/德运高钙全脂牛奶</h4>
+									<p class="mui-h6 mui-ellipsis jiezhang-place"><span>数量：x1</span><span>颜色：金装3段1200克</span></p>
+									<p class="jiezhang-footer"><span>￥129.00</span><span>￥129.00</span><span>x3</span></p>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a href="">
+							<div class="mui-table">
+								<div class="mui-table-cell mui-col-xs-2 shop-logo">
+									<img src="../../img/shop-photo1.png" />
+								</div>
+								<div class="mui-table-cell mui-col-xs-10 shop-xinxi">
+									<h4 class="mui-ellipsis jiezhang-name">澳洲进口Devondale/德运高钙全脂牛奶</h4>
+									<p class="mui-h6 mui-ellipsis jiezhang-place"><span>数量：x1</span><span>颜色：金装3段1200克</span></p>
+									<p class="jiezhang-footer"><span>￥129.00</span><span>￥129.00</span><span>x3</span></p>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<ul class="jz-youhui">
+				<li>学分抵扣 <button><span>可使用学币10个</span><i class="iconfont">&#xe618;</i></button> </li>
+				<li><button id='fahuo' type='button' class=" btn peisong-type"><span>配送方式</span><i class="mui-icon mui-icon-arrowright"></i> <p class="fr"><span id="jiage">￥5.00</span><span>快递发货</span></p></button></li>
+				<li><input type="text" placeholder="选填：给商家留言（45字以内）"/></li>
+			</ul>
+			<ul class="jz-zongji">
+				<li>商品总计 <span>￥357.00</span></li>
+				<li>运费 <span>￥39.00</span> </li>
+				<li>优惠总计 <span>-￥25.00</span></li>
+			</ul>
+		</div>
+		<div class="jiesuan-tijiao">
+			<span>实付金额：</span><span>￥711.35</span><button>提交</button>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.ready(function() {
+					var btns = $('.btn');
+					var demo1 = $('#fahuo')[0];
+					var jiage = $('#jiage')[0];
+					btns.each(function(i, btn) {
+						btn.addEventListener('tap', function() {
+							var picker = new mui.PopPicker();
+							picker.setData([{value:'0',text:'免邮'},{value:"10",text:"邮费10元"}]);
+							picker.show(function (selectItems) {
+								jiage.innerText = selectItems[0].text;
+								picker.dispose();
+	//							console.log(selectItems[0].text);
+	//							console.log(selectItems[0].value);
+							});
+						});
+					});
+					var bianji=document.getElementById('bianji');
+					var tx1=document.getElementById('tx-success');
+					var tx2=document.getElementById('tx-tianxie');
+					var jztj=document.getElementById('jztijiao');
+					bianji.addEventListener('tap',function(){
+						tx1.style.display='none';
+						tx2.style.display='block';
+						bianji.style.display='none';
+					});
+					jztj.addEventListener('tap',function(){
+						tx1.style.display='block';
+						tx2.style.display='none';
+						bianji.style.display='block';
+					});
+				});
+			})(mui, document);
+			
+		</script>
+	</body>
+</html>

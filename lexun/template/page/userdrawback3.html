@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"/>
+		<title>申请退款</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">申请退款</h1>
+		</header>
+		<div class="mui-content">
+				<ul class="dbback1-box">
+					<li class="bgf db-fw">申请服务 <span>仅退款</span></li>
+					<li class="bgf db-tkyy">货物状态
+						<span class="iconfont fr">&#xe606;</span>
+						<select name="">
+							<option value="">请选择货物状态</option>
+							<option value="">请选择货物状态1</option>
+							<option value="">请选择货物状态2</option>
+						</select>
+					</li>
+					<li class="bgf db-sm mart-20"><textarea name="" rows="" cols="" placeholder="退款说明（最多200字）"></textarea></li>
+					<li class="db-img">
+						<div class="db-img-box">
+							<span><img src="../../img/3-book-logo.png" alt="" /><i class="iconfont">&#xe6ad;</i></span>
+							<span><img src="../../img/3-book-logo.png" alt="" /><i class="iconfont">&#xe6ad;</i></span>
+						</div>
+						<div class="db-sc">
+							<img src="../../img/shangchuanpz.png" alt="" />
+							<input type="file" />
+						</div>
+						
+					</li>
+				</ul>
+				<div class="db-tj">提交申请</div>
+		</div>
+		<script>
+			var Ch=document.documentElement.clientHeight;
+			var cont = document.getElementsByClassName('mui-content')[0];
+			cont.style.minHeight=Ch+'px';
+		</script>
+	</body>
+</html>

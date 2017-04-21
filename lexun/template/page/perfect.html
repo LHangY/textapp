@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport"  />
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css"/>
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav perfect-title">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">完善信息</h1>
+		</header>
+		<div class="mui-content bgf">
+			<h3 class="perfect-h3 text-center">“关于你，我们想了解更多一点”</h3>
+			<div class="text-center uploading">
+				<img src="../../img/1-uploading.png"/>
+				<input type="file" id="file1"/>
+				<p>请上传头像</p>
+			</div>
+			<ul class="list-box">
+				<li class="list-item">
+					<span></span>
+					<a href="">姓名</a>
+					<input type="text" name="" id="" value="" placeholder="请输入" />
+				</li>
+				<li class="list-item">
+					<span></span>
+					<a href="">性别</a>
+					<button id='demo1' class="btn btn1 mui-btn mui-btn-block">请选择 ></button>
+				</li>
+				<li class="list-item">
+					<span></span>
+					<a href="">年龄</a>
+					<button id='demo2' data-options='{"type":"date","beginYear":1970,"endYear":2018}' class="btn mui-btn mui-btn-block">请选择 ></button>
+				</li>
+				<li class="list-item">
+					<span></span>
+					<a href="">手机号</a>
+					<input type="text" name="" id="" value="" placeholder="请输入" />
+				</li>
+				<li class="list-item">
+					<span></span>
+					<a href="">推荐人邀请码</a>
+					<input type="text" name="" id="" value="" placeholder="请填写推荐人的邀请码" />
+				</li>
+			</ul>
+			<a href="" class="register-submit">完成注册</a>
+		</div>
+		
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script>
+			(function($) {
+				$.init();
+				var result = $('#demo2')[0];
+				var demo1 = $('#demo1')[0];
+				var btns = $('.btn');
+				var btns1=$('.btn1');
+				btns.each(function(i, btn) {
+					
+					btn.addEventListener('tap', function() {
+						if(i==1){
+							var optionsJson = this.getAttribute('data-options') || '{}';
+							var options = JSON.parse(optionsJson);
+							var id = this.getAttribute('id');
+							/*
+							 * 首次显示时实例化组件
+							 * 示例为了简洁，将 options 放在了按钮的 dom 上
+							 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+							 */
+							var picker = new $.DtPicker(options);
+							picker.show(function(rs) {
+								/*
+								 * rs.value 拼合后的 value
+								 * rs.text 拼合后的 text
+								 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+								 * rs.m 月，用法同年
+								 * rs.d 日，用法同年
+								 * rs.h 时，用法同年
+								 * rs.i 分（minutes 的第二个字母），用法同年
+								 */
+								result.innerText = rs.text;
+								picker.dispose();
+							});
+						}
+						if(i==0){
+							var picker = new mui.PopPicker();
+							 picker.setData([{value:'0',text:'男'},{value:"1",text:"女"}]);
+							 picker.show(function (selectItems) {
+							 	demo1.innerText = selectItems[0].text;
+								picker.dispose();
+//							    console.log(selectItems[0].text);
+//							    console.log(selectItems[0].value);
+					  		});
+						}
+					}, false);
+				});
+				
+//				btns1.=function(){
+					
+//				};
+			})(mui);
+		</script>
+	</body>
+</html>

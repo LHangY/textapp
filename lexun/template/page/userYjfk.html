@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" />
+		<title>意见反馈</title>
+		<script type="text/javascript" src="../../js/meta-font.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav Data-title  forget-title bgcolor-4b">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">意见反馈</h1>
+		</header>
+		<div class="mui-content yjfk-box">
+			<form action="" method="post">
+				<div class="yjfk-txt bgf">
+					<textarea name="" rows="" cols="" placeholder="请详细描述您的问题或建议，我们将及时跟进解决。（建议添加相关问题截图）"></textarea>
+				</div>
+				<div class="yjfk-img bgf">
+					<div class="btnflie">
+						<img src="../../img/tjzp.png" alt="" />
+						<input type="file" />
+					</div>
+					
+				</div>
+				<input class="yjfk-tel" type="text" placeholder="手机号/邮箱（选填，方便我们联系你）"/>
+				<div class="submit-box">
+					<input type="submit" value="提交" class="yjfk-submit"/>
+				</div>
+			</form>
+		</div>
+		<script>
+			var Ch=document.documentElement.clientHeight;
+			var cont = document.getElementsByClassName('mui-content')[0];
+			cont.style.minHeight=Ch+'px';
+		</script>
+	</body>
+</html>
